@@ -8,7 +8,7 @@
 
 Console.Clear();
 
-int DigitSum(string number)
+int DigitQty(string number)
 {
     int result = 0;
 
@@ -19,6 +19,36 @@ int DigitSum(string number)
     return result;
 }
 
+string inputNum(string message)
+{
+    Console.Write(message);
+    string numString = Console.ReadLine()!;
+    return numString;
+}
+
+bool ValidateNumber(string numString)
+{
+    int num = int.Parse(numString);
+    if(num < 1)
+    {
+        Console.WriteLine("Number must be natural. Try again!");
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
+
+string stringNum = inputNum("Enter natural number: ");
+int digitQuantity = DigitQty(stringNum);
+
+if(ValidateNumber(stringNum))
+{
+    Console.WriteLine($"{stringNum} -> {digitQuantity}");
+}
+
+/*
 Console.Write("Enter natural number: ");
 string number = Console.ReadLine()!;
 int num = int.Parse(number);
@@ -32,3 +62,4 @@ else
 {
     Console.WriteLine("Wrong number. Try again :)");
 }
+*/
